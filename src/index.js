@@ -16,7 +16,10 @@ class Index extends React.Component {
       currentStep: 1,
       email: "",
       username: "",
-      password: ""
+      name: "",
+      password: "",
+      gender: "",
+      about: ""
     };
   }
   handleChange = event => {
@@ -186,7 +189,7 @@ function Step2(props) {
           <div className=" wrapper">
             <h3 className="color-grey">
               <FiUserPlus />
-              Sign up to create account
+              Create Account For Full Access
             </h3>
             <hr />
             <div className="flex">
@@ -210,52 +213,56 @@ function Step2(props) {
 
             <div>
               <form>
-                <label htmlFor="email">
-                  Email address
+                <label htmlFor="name">
+                  Full Name
                   <input
                     className=""
                     id="email"
                     name="email"
                     type="text"
-                    placeholder="Enter email"
-                    value={props.email}
+                    placeholder="Enter Your Name"
+                    value={props.name}
                     onChange={props.handleChange}
                   />
                 </label>
                 <br />
 
-                <label htmlFor="username">
-                  Username
+                <label htmlFor="country">
+                  Country
+                  <select>
+                    <option onChange={props.handleChange}>country</option>
+                    <option onChange={props.handleChange}>india</option>
+                    <option onChange={props.handleChange}>india</option>
+                  </select>
+                </label>
+                <br />
+
+                <label htmlFor="gender">
+                  Gender
+                  <button value={props.gender} onChange={props.handleChange}>
+                    Male
+                  </button>
+                  <button value={props.gender} onChange={props.handleChange}>
+                    Female
+                  </button>
+                </label>
+                <br />
+                <label htmlFor="about">
+                  About You
                   <input
                     className=""
-                    id="username"
-                    name="username"
+                    id="about"
+                    name="about"
                     type="text"
-                    placeholder="Enter username"
-                    value={props.username}
+                    placeholder="Write something about yourself"
+                    value={props.about}
                     onChange={props.handleChange}
                   />
                 </label>
-                <br />
-
-                <label htmlFor="password">
-                  Password
-                  <input
-                    className=""
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Enter password"
-                    value={props.password}
-                    onChange={props.handleChange}
-                  />
-                </label>
-                <hr />
-                <br />
               </form>
 
               <div className="flex">
-                <p className="step">Step 1 of 3</p>
+                <p className="step">Step 2 of 3</p>
                 <div className="flex">
                   <button onClick={props.previous}>Previous</button>
                   <p className="span-p">or</p>
