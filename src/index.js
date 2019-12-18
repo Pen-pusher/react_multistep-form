@@ -4,6 +4,8 @@ import { render } from "react-dom";
 
 import { FiUserPlus } from "react-icons/fi";
 import { MdDone } from "react-icons/md";
+import { FaCcVisa } from "react-icons/fa";
+import { FaCcMastercard, FaCcPaypal } from "react-icons/fa";
 
 // Relative Imports
 import "./styles/normalize.css";
@@ -19,7 +21,8 @@ class Index extends React.Component {
       name: "",
       password: "",
       gender: "",
-      about: ""
+      about: "",
+      card: ""
     };
   }
   handleChange = event => {
@@ -293,23 +296,96 @@ function Step3(props) {
     return null;
   }
   return (
-    <React.Fragment>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input
-          className="form-control"
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Enter password"
-          value={props.password}
-          onChange={props.handleChange}
-        />
-      </div>
-      <button onClick={props.previous}>Previous</button>
+    <div>
+      <main>
+        <body>
+          <div className=" wrapper">
+            <h3 className="color-grey">
+              <FiUserPlus />
+              Create Account For Full Access
+            </h3>
+            <hr />
+            <div className="flex">
+              <h2>
+                {" "}
+                <span className="tick">
+                  <MdDone />
+                </span>
+                Accont Information
+              </h2>
+              <h2>
+                {" "}
+                <span className="tick">
+                  <MdDone />
+                </span>
+                Personal Information
+              </h2>
+              <h2>
+                {" "}
+                <span className="circle">3</span>Payment details
+              </h2>
+            </div>
+            <hr />
 
-      <button className="btn btn-success btn-block">Sign up</button>
-    </React.Fragment>
+            <div>
+              <form>
+                <label htmlFor="name">
+                  Payment Type
+                  <button>
+                    <FaCcVisa />
+                  </button>
+                  <button>
+                    <FaCcMastercard />
+                  </button>
+                  <button>
+                    <FaCcPaypal />
+                  </button>
+                </label>
+                <br />
+
+                <label htmlFor="country">
+                  Card Number
+                  <input
+                    className=""
+                    id="card"
+                    name="card"
+                    type="number"
+                    placeholder="Enter Your Card Number"
+                    value={props.card}
+                    onChange={props.handleChange}
+                  />
+                </label>
+                <br />
+
+                <label htmlFor="card-name">
+                  Name On Card
+                  <input
+                    className=""
+                    id="card"
+                    name="card"
+                    type="number"
+                    placeholder="Enter Your Name As On The Card"
+                    value={props.card}
+                    onChange={props.handleChange}
+                  />
+                </label>
+                <hr />
+              </form>
+
+              <div className="flex">
+                <div className="flex">
+                  <button className="submit-button">Submit</button>
+                  <p className="para-3">
+                    By submitting this form, you agree with our
+                    <span className="term">Terms and Conditions</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </body>
+      </main>
+    </div>
   );
 }
 

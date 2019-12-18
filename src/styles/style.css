@@ -11,6 +11,7 @@ main {
   width: 800px;
   border-radius: 7px;
   font-family: "Roboto Condensed", sans-serif;
+  box-shadow: 1px 1px 1px 1px #888888;
 }
 body {
   margin: 3rem 2rem;
@@ -52,8 +53,8 @@ button {
   border-radius: 7px;
   background-color: #0672e1;
   color: white;
-  font-weight: 700;
-  padding: 0 0.5rem;
+  font-weight: 400;
+  padding: 0 1rem;
 }
 
 hr {
@@ -121,4 +122,18 @@ select {
   margin-bottom: 1rem;
   width: 200px;
   height: 100px;
+}
+.term {
+  color: #0672e1;
+}
+.para-3 {
+  margin-left: 2rem;
+}
+.submit-button {
+  font-size: 12px;
+  border-radius: 7px;
+  background-color: #0672e1;
+  color: white;
+  font-weight: 400;
+  padding: 0 1.5rem;
 }
