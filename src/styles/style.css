@@ -82,3 +82,43 @@ h2 {
   font-size: medium;
   font-weight: 700;
 }
+select {
+  text-align: center;
+  border: 1px solid #818181;
+  align-items: center;
+  justify-content: center;
+  margin-right: 300px;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  color: #091d31;
+  margin-bottom: 1rem;
+  width: 200px;
+}
+
+.male-btn {
+  width: 100px;
+  background-color: #f1f1f1;
+  color: #68696b;
+  border: 1px solid #d6d6d6;
+  margin-right: 9rem;
+}
+
+.female-btn {
+  width: 100px;
+  background-color: #f6f6f6;
+  color: #b4b4b4;
+  border: 1px solid #d6d6d6;
+}
+.about {
+  text-align: start;
+  border: 1px solid #818181;
+  align-items: center;
+  justify-content: center;
+  margin-right: 270px;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  color: #091d31;
+  margin-bottom: 1rem;
+  width: 200px;
+  height: 100px;
+}

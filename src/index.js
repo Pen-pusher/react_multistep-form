@@ -230,35 +230,44 @@ function Step2(props) {
                 <label htmlFor="country">
                   Country
                   <select>
-                    <option onChange={props.handleChange}>country</option>
-                    <option onChange={props.handleChange}>india</option>
-                    <option onChange={props.handleChange}>india</option>
+                    <option onChange={props.handleChange}>Select</option>
+                    <option onChange={props.handleChange}>#</option>
+                    <option onChange={props.handleChange}>#</option>
                   </select>
                 </label>
                 <br />
 
                 <label htmlFor="gender">
                   Gender
-                  <button value={props.gender} onChange={props.handleChange}>
+                  <button
+                    value={props.gender}
+                    onChange={props.handleChange}
+                    className="male-btn"
+                  >
                     Male
                   </button>
-                  <button value={props.gender} onChange={props.handleChange}>
+                  <button
+                    value={props.gender}
+                    onChange={props.handleChange}
+                    className="female-btn"
+                  >
                     Female
                   </button>
                 </label>
                 <br />
                 <label htmlFor="about">
                   About You
-                  <input
-                    className=""
+                  <textarea
+                    className="about "
                     id="about"
                     name="about"
-                    type="text"
+                    type="textarea"
                     placeholder="Write something about yourself"
                     value={props.about}
                     onChange={props.handleChange}
-                  />
+                  ></textarea>
                 </label>
+                <hr />
               </form>
 
               <div className="flex">
