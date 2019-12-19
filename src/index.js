@@ -22,7 +22,10 @@ class Index extends React.Component {
       password: "",
       gender: "",
       about: "",
-      card: ""
+      card: "",
+      nameError: "",
+      emailError: "",
+      passwordError: ""
     };
   }
   handleChange = event => {
@@ -32,8 +35,23 @@ class Index extends React.Component {
     });
   };
 
+  validate = () => {
+    //  let nameError = ""
+    let emailError = "";
+    //  let passwordError = ""
+    if (!this.state.email.includes("@")) {
+      emailError = "invalid email";
+    }
+    if (emailError) {
+      this.setState({ emailError });
+      return false;
+    }
+    return true;
+  };
+
   handleSubmit = event => {
     event.preventDefault();
+
     const { email, username, password } = this.state;
     alert(`Your registration detail: \n 
            Email: ${email} \n 
@@ -42,11 +60,15 @@ class Index extends React.Component {
   };
 
   _next = () => {
-    let currentStep = this.state.currentStep;
-    currentStep = currentStep >= 2 ? 3 : currentStep + 1;
-    this.setState({
-      currentStep: currentStep
-    });
+    const isValid = this.validate();
+    if (isValid) {
+      let currentStep = this.state.currentStep;
+      currentStep = currentStep >= 2 ? 3 : currentStep + 1;
+      this.setState({
+        currentStep: currentStep
+      });
+      console.log(this.state);
+    }
   };
 
   _previous = () => {
@@ -69,6 +91,7 @@ class Index extends React.Component {
             handleChange={this.handleChange}
             email={this.state.email}
             next={this._next}
+            emailError={this.state.emailError}
           />
           <Step2
             currentStep={this.state.currentStep}
@@ -132,6 +155,15 @@ function Step1(props) {
                     onChange={props.handleChange}
                   />
                 </label>
+                <div
+                  style={{
+                    fontSize: 16,
+                    textTransform: "uppercase",
+                    color: "red"
+                  }}
+                >
+                  {props.emailError}
+                </div>
                 <br />
 
                 <label htmlFor="username">
