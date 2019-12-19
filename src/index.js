@@ -228,7 +228,7 @@ function Step2(props) {
             </h3>
             <hr />
             <div className="flex">
-              <h2>
+              <h2 style={{ color: "#818181" }}>
                 {" "}
                 <span className="tick">
                   <MdDone />
@@ -239,9 +239,15 @@ function Step2(props) {
                 {" "}
                 <span className="circle">2</span>Personal Information
               </h2>
-              <h2>
+              <h2 style={{ color: "#818181" }}>
                 {" "}
-                <span className="circle">3</span>Payment details
+                <span
+                  className="circle"
+                  style={{ border: "2px solid #818181" }}
+                >
+                  3
+                </span>
+                Payment details
               </h2>
             </div>
             <hr />
@@ -338,14 +344,14 @@ function Step3(props) {
             </h3>
             <hr />
             <div className="flex">
-              <h2>
+              <h2 style={{ color: "#818181" }}>
                 {" "}
                 <span className="tick">
                   <MdDone />
                 </span>
                 Accont Information
               </h2>
-              <h2>
+              <h2 style={{ color: "#818181" }}>
                 {" "}
                 <span className="tick">
                   <MdDone />
